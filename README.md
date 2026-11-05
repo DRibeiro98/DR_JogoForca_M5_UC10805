@@ -38,3 +38,10 @@ Permitir que o utilizador descubra uma palavra secreta, adivinhando letra a letr
 **1.** O jogo deverá ser executado inteiramente na consola/terminal, com mensagens intuitivas e será totalmente em português.\
 **2.** O código-fonte deverá ser escrito seguindo as boas práticas da **PEP 8**.\
 **3.** O Programa deverá ter implementado blocos de exceção para evitar que vá abaixo caso o utilizador introduza algum dado inválido ou caso ocorra um erro inesperado.
+
+---
+---
+## 📈 Fluxograma do Jogo da Forca
+
+![Fluxograma do Jogo da Forca](./diagramas/FluxogramaJogoDaForca.png)
+
