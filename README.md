@@ -44,4 +44,9 @@ Permitir que o utilizador descubra uma palavra secreta, adivinhando letra a letr
 ## 📈 Fluxograma do Jogo da Forca
 
 ![Fluxograma do Jogo da Forca](./diagramas/FluxogramaJogoDaForca.png)
-
+---
+---
+## 🛖 Estrutura do Projeto
+- **main.py:** Ponto de entrada do Programa
+- **jogo.py:** Lógica principal e a mecânica do jogo
+- **palavras.py:** Módulo de dados com a lista de palavras secretas.
