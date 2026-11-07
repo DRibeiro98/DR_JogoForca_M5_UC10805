@@ -19,9 +19,12 @@ def main():
     tentativas_dadas = []
 
     while esta_ativo:
+        print("-"*54)
         print(f"\nPalavra: {palavra_atual}")
         print(f"Tens {vidas} vidas.")
-        print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}\n")
+        print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}")
+        print("-"*54)
+        print()
 
         tentativa = obter_tentativa()
         
