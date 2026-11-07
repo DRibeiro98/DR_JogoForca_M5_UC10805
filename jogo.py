@@ -22,6 +22,10 @@ def atualiza_palavra_escondida(palavraSecreta, palavraAtual, tentativa):
         
     return "".join(novaPalavra)
 
+def mem_tentativas(letras_dadas):
+    """Função para mostrar todas as tentativas dadas pelo utilizador por ordem alfabética"""
+    return " ".join(sorted(letras_dadas))
+
 def obter_tentativa():
     """Função que irá pedir e validar o input inserido pelo utilizador"""
     valido = False
