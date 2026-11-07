@@ -12,6 +12,16 @@ def palavra_escondida(palavraSecreta):
     palavra = "_ " * len(palavraSecreta)
     return palavra
 
+def atualiza_palavra_escondida(palavraSecreta, palavraAtual, tentativa):
+    """Função para subsituir os traços pela tentativa"""
+    novaPalavra = list(palavraAtual)
+
+    for i in range(len(palavraSecreta)):
+        if palavraSecreta[i] == tentativa:
+            novaPalavra[i * 2] = tentativa
+        
+    return "".join(novaPalavra)
+
 def obter_tentativa():
     """Função que irá pedir e validar o input inserido pelo utilizador"""
     valido = False
