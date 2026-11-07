@@ -19,47 +19,56 @@ def main():
     tentativas_dadas = []
 
     while esta_ativo:
-        print("-"*54)
-        print(f"\nPalavra: {palavra_atual}")
-        print(f"Tens {vidas} vidas.")
-        print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}")
-        print("-"*54)
-        print()
+        try:
+            print("-"*54)
+            print(f"\nPalavra: {palavra_atual}")
+            print(f"Tens {vidas} vidas.")
+            print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}")
+            print("-"*54)
+            print()
 
-        tentativa = obter_tentativa()
+            tentativa = obter_tentativa()
         
-        #Condição para verificar se o jogador quer sair do jogo
-        if tentativa == "sair":
-            esta_ativo = False
-            print("OBRIGADO!! ATÉ À PRÓXIMA")
-            break
+            #Condição para verificar se o jogador quer sair do jogo
+            if tentativa == "sair":
+                esta_ativo = False
+                print("OBRIGADO!! ATÉ À PRÓXIMA")
+                break
 
-        #Condição para verificar se a tentativa é repetida
-        if tentativa in tentativas_dadas:
-             print(f"\nJÁ TENTASTE A LETRA {tentativa}, ESCOLHE OUTRA.")
-             continue
+            #Condição para verificar se a tentativa é repetida
+            if tentativa in tentativas_dadas:
+                print(f"\nJÁ TENTASTE A LETRA {tentativa}, ESCOLHE OUTRA.")
+                continue
         
-        #Regista à "memória" criada a tentativa do utilizador
-        tentativas_dadas.append(tentativa)
+            #Regista à "memória" criada a tentativa do utilizador
+            tentativas_dadas.append(tentativa)
         
-        #Condições para verificar se existe ou não a letra introduzida pelo utilizador e gerir as vidas
-        if tentativa in palavra_secreta:
+            #Condições para verificar se existe ou não a letra introduzida pelo utilizador e gerir as vidas
+            if tentativa in palavra_secreta:
                 print(f"\nBOA!!! A LETRA {tentativa} FAZ PARTE DA PALAVRA!!")
                 palavra_atual = atualiza_palavra_escondida(palavra_secreta, palavra_atual, tentativa)
-        else:
-            print(f"\nOOOOOOH :( {tentativa} NÃO FAZ PARTE DA PALAVRA)")
-            print("IRÁS PERDER 1 VIDA!!!! MAIS SORTE NA PRÓXIMA :) !!!")
-            vidas = vidas - 1
+            else:
+                print(f"\nOOOOOOH :( {tentativa} NÃO FAZ PARTE DA PALAVRA)")
+                print("IRÁS PERDER 1 VIDA!!!! MAIS SORTE NA PRÓXIMA :) !!!")
+                vidas = vidas - 1
 
-        #Condições para verificar o término do jogo
-        if "_" not in palavra_atual:
-            print("\nPARABÉNS DESCOBRISTE TODAS AS LETRAS :) !!!!!")
-            print(f"A PALAVRA SECRETA ERA {palavra_secreta}")
+            #Condições para verificar o término do jogo
+            if "_" not in palavra_atual:
+                print("\nPARABÉNS DESCOBRISTE TODAS AS LETRAS :) !!!!!")
+                print(f"A PALAVRA SECRETA ERA {palavra_secreta}")
+                esta_ativo = False
+            elif vidas == 0:
+                print("\nGAME OVER!!! :( ACABARAM AS TUAS VIDAS!!")
+                print(f"A PALAVRA SECRETA ERA: {palavra_secreta}")
+                esta_ativo = False
+                
+        except (KeyboardInterrupt):
+            print("\nAVISO PROGRAMA INTERROMPIDO PELO UTILIZADOR.")
             esta_ativo = False
-        elif vidas == 0:
-            print("\nGAME OVER!!! :( ACABARAM AS TUAS VIDAS!!")
-            print(f"A PALAVRA SECRETA ERA: {palavra_secreta}")
+        except (EOFError):
+            print("\nAVISO ATINGIDO FIM DE FLUXO DE ENTRADA, PROGRAMA INTERROMPIDO!")
             esta_ativo = False
+    
 
 main()
 
