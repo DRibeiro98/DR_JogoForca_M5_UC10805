@@ -20,8 +20,8 @@ def main():
 
     while esta_ativo:
         print(f"\nPalavra: {palavra_atual}")
-        print(f"Tens {vidas} vidas.\n")
-        print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}")
+        print(f"Tens {vidas} vidas.")
+        print(f"Estas foram as tuas tentativas-> {mem_tentativas(tentativas_dadas)}\n")
 
         tentativa = obter_tentativa()
         
