@@ -3,7 +3,7 @@
 
 ## 1.   ☣️ Definição do Problema 
 
-- O objetivo do projeto consistiu em desenvolver um jogo interativo em Python que recriasse o clássico **Jogo da Forca** em ambiente de consola/terminal\
+- O objetivo do projeto consistiu em desenvolver um jogo interativo em Python que recriasse o clássico **Jogo da Forca** em ambiente de consola/terminal
 - O programa irá sortear uma palavra secreta e o utilizador terá a tarefa de adivinhar essa palavra, letra a letra, dentro de um limite máximo de **6 vidas**, que representam: 1- cabeça, 1- tronco, 2- braços e 2- pernas
 
 ---
